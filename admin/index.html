@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>APPLE BRAND | Premium Spices & Groceries</title>
+    
+    <!-- Tailwind CSS CDN with Forms & Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Premium Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@100..900&family=IBM+Plex+Sans:wght@100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+    
+    <!-- Link to custom stylesheets -->
+    <link rel="stylesheet" href="app.css"/>
+    
+    <!-- Tailwind Configuration matching Epicurean Minimalist Design guidelines -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-primary": "#accfb3",
+                        "on-primary-fixed-variant": "#2f4d38",
+                        "on-tertiary-container": "#8c908f",
+                        "on-tertiary-fixed": "#181c1b",
+                        "surface-container-highest": "#e4e2e4",
+                        primary: "#001809",
+                        "surface-bright": "#fcf8fb",
+                        "secondary-fixed-dim": "#e9c176",
+                        "inverse-surface": "#303032",
+                        "surface-tint": "#46654f",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#252928",
+                        "tertiary-fixed-dim": "#c4c7c5",
+                        "on-background": "#1b1b1d",
+                        outline: "#727972",
+                        "primary-fixed-dim": "#accfb3",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f0edef",
+                        "secondary-fixed": "#ffdea5",
+                        "on-primary-container": "#76977e",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#c8ebce",
+                        "surface-container-low": "#f6f3f5",
+                        "secondary-container": "#fed488",
+                        "surface-dim": "#dcd9dc",
+                        "on-secondary-container": "#785a1a",
+                        "surface-container-high": "#eae7ea",
+                        "primary-container": "#0f2e1b",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#e0e3e1",
+                        error: "#ba1a1a",
+                        "on-surface-variant": "#424842",
+                        "inverse-on-surface": "#f3f0f2",
+                        tertiary: "#111514",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "outline-variant": "#c2c8c0",
+                        "on-secondary-fixed": "#261900",
+                        "on-surface": "#1b1b1d",
+                        surface: "#fcf8fb",
+                        background: "#fcf8fb",
+                        "surface-container-lowest": "#ffffff",
+                        secondary: "#775a19",
+                        "on-tertiary-fixed-variant": "#434846",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e4",
+                        "on-primary-fixed": "#02210f",
+                        "on-secondary": "#ffffff"
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "gutter-desktop": "24px",
+                        "container-max": "1440px",
+                        base: "8px",
+                        "margin-desktop": "64px",
+                        "gutter-mobile": "16px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Roboto", "sans-serif"],
+                        "body-lg": ["Roboto", "sans-serif"],
+                        "headline-lg": ["Roboto", "sans-serif"],
+                        "label-sm": ["Roboto", "sans-serif"],
+                        "body-md": ["Roboto", "sans-serif"],
+                        "title-md": ["Roboto", "sans-serif"],
+                        "headline-lg-mobile": ["Roboto", "sans-serif"],
+                        headline: ["Roboto", "sans-serif"],
+                        display: ["Roboto", "sans-serif"],
+                        body: ["Roboto", "sans-serif"],
+                        label: ["Roboto", "sans-serif"]
+                    },
+                    fontSize: {
+                        "display-lg": ["56px", {lineHeight: "1.1", letterSpacing: "-0.01em", fontWeight: "400"}],
+                        "body-lg": ["18px", {lineHeight: "1.6", fontWeight: "400"}],
+                        "headline-lg": ["32px", {lineHeight: "1.2", letterSpacing: "0em", fontWeight: "500"}],
+                        "label-sm": ["12px", {lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600"}],
+                        "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}],
+                        "title-md": ["20px", {lineHeight: "1.4", fontWeight: "600"}],
+                        "headline-lg-mobile": ["28px", {lineHeight: "1.2", fontWeight: "500"}]
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-fixed-dim custom-scrollbar dark:bg-[#070b08] dark:text-gray-100">
+    <div id="admin-wrapper" class="flex h-screen overflow-hidden hidden transition-all duration-500 dark:bg-[#070b08] relative">
+        <!-- Admin Login Screen overlay (visible if not logged in) -->
+        <div id="admin-login-screen" class="absolute inset-0 z-50 flex items-center justify-center bg-[#F5F5F7] dark:bg-[#070b08] p-4 transition-all duration-500">
+            <div class="glass-card max-w-md w-full p-8 rounded-3xl border border-outline-variant/40 shadow-2xl bg-white dark:bg-black/60 dark:border-white/10 flex flex-col gap-6 text-center animate-fade-up">
+                <div class="flex flex-col items-center">
+                    <img src="logo.jpg" alt="Apple Brand Spices Logo" class="w-16 h-16 rounded-full object-cover border border-primary/10 shadow-md mb-2 dark:border-white/10"/>
+                    <h1 class="brand-logo-font text-title-md font-bold text-primary dark:text-[#e9c176] mb-1">Apple Brand Spices</h1>
+                    <h2 id="admin-auth-title" class="font-display-lg text-headline-lg font-bold text-primary dark:text-white uppercase">Admin Sign In</h2>
+                    <p id="admin-auth-desc" class="text-xs text-on-surface-variant dark:text-gray-400 mt-1">Authenticate to access catalog and sales records.</p>
+                </div>
+                
+                <div id="signin-form-wrapper" class="space-y-4 text-left">
+                    <form onsubmit="executeAdminLogin(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Email Address</label>
+                            <input id="admin-login-email" type="email" value="julian.thorne@epicurean.com" required 
+                                   class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant font-semibold dark:text-gray-300">Secret Password</label>
+                                <button type="button" onclick="openForgotPasswordModal()" class="text-[11px] text-primary hover:underline font-bold dark:text-[#e9c176] transition-all">Forgot Password?</button>
+                            </div>
+                            <input id="admin-login-password" type="password" value="applebrand123" required 
+                                   class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                        </div>
+                        
+                        <div id="admin-login-error" class="hidden text-error text-xs font-bold bg-error-container/20 p-3 rounded-lg border border-error/20">
+                            <!-- Filled by JS -->
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary text-on-primary py-3.5 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809]">
+                            Sign In & Verify
+                        </button>
+                        
+                        <div class="flex justify-center items-center text-xs text-on-surface-variant dark:text-gray-400 mt-2">
+                            <a href="/customer/" class="hover:text-primary underline dark:hover:text-white">
+                                Return Home
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar Navigation -->
+        <aside id="admin-sidebar" class="w-64 flex-shrink-0 bg-surface-container-lowest border-r border-outline-variant/30 flex flex-col z-30 shadow-md dark:bg-[#070b08] dark:border-white/5">
+            <div class="h-20 flex items-center px-gutter-desktop justify-between border-b border-primary/5 dark:border-white/5">
+                <div class="flex items-center gap-2">
+                    <img src="logo.jpg" alt="Apple Brand Spices Logo" class="w-8 h-8 rounded-full object-cover border border-primary/10 shadow-sm dark:border-white/10"/>
+                    <span class="brand-logo-font text-sm font-bold tracking-tighter text-primary dark:text-[#e9c176]">Apple Brand Spices</span>
+                </div>
+                <a href="#" onclick="executeAdminSignout(event)" class="p-1 hover:bg-primary/5 rounded border border-outline-variant/30 text-on-surface-variant dark:text-gray-300 dark:border-white/10" title="Sign Out">
+                    <span class="material-symbols-outlined text-[18px]">logout</span>
+                </a>
+            </div>
+            
+            <nav class="flex-1 px-4 py-6 space-y-1 custom-scrollbar overflow-y-auto">
+                <button onclick="setAdminTab('overview')" id="admin-btn-tab-overview" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-on-primary-container font-semibold transition-all">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-label-sm text-label-sm tracking-widest uppercase">Dashboard</span>
+                </button>
+                <button onclick="setAdminTab('inventory')" id="admin-btn-tab-inventory" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all dark:text-gray-300 dark:hover:bg-white/5">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    <span class="font-label-sm text-label-sm tracking-widest uppercase">Inventory</span>
+                </button>
+                <button onclick="setAdminTab('orders')" id="admin-btn-tab-orders" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all dark:text-gray-300 dark:hover:bg-white/5">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span class="font-label-sm text-label-sm tracking-widest uppercase">Orders Queue</span>
+                </button>
+                <button onclick="setAdminTab('customers')" id="admin-btn-tab-customers" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all dark:text-gray-300 dark:hover:bg-white/5">
+                    <span class="material-symbols-outlined">group</span>
+                    <span class="font-label-sm text-label-sm tracking-widest uppercase">Customers</span>
+                </button>
+            </nav>
+            
+            <!-- User Status bottom bar -->
+            <div onclick="openAdminProfileModal()" class="p-gutter-desktop border-t border-outline-variant/30 bg-surface-container-low dark:bg-black/40 dark:border-white/5 cursor-pointer hover:bg-primary/5 dark:hover:bg-white/5 transition-all duration-200" title="View Admin Profile Details">
+                <div class="flex items-center gap-3">
+                    <div id="admin-sidebar-avatar-container" class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white overflow-hidden shadow-inner font-bold text-xs uppercase dark:bg-[#c5a059] dark:text-[#001809]">
+                        <img id="admin-sidebar-avatar-img" alt="Julian Thorne" class="w-full h-full object-cover" 
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXhDpbac5fAU0ml7QBORqnEid56BarZTlqtukLzriWh5xBj0f7gWh2jhdsMF3VTfcJv-nG-yYqGjmA7tnRmiKnuQTiJhqI8Y7N_kAoCsDQvdSBo2LB9D16T1Uu_Z8fQk1PRizJbnUvHlUsgJmaxFuebsyfrBLaUKGQoQn8W7Ioo6hzSeJcGq6hbpctyu94pelTQDRGxu4BRb7oLSb98FNbR5LvwUTM-70zmaqKBM9h4CDd5bHPkUwDPScpqwFomKGJECXEeNhYF1o"/>
+                        <span id="admin-sidebar-avatar-initials" class="hidden">JT</span>
+                    </div>
+                    <div>
+                        <p id="admin-sidebar-name" class="font-label-sm text-label-sm text-primary font-bold dark:text-[#e9c176]">Julian Thorne</p>
+                        <p class="text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold dark:text-gray-400">Brand Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main id="admin-main-content" class="flex-1 flex flex-col min-w-0 bg-surface-container-low overflow-hidden dark:bg-[#070b08]">
+            
+            <!-- Admin Top Bar Header -->
+            <header class="h-20 glass-panel border-b border-primary/5 px-gutter-desktop flex items-center justify-between sticky top-0 z-20 dark:border-white/5">
+                <div class="flex items-center gap-gutter-desktop">
+                    <h1 class="font-headline-lg text-headline-lg text-primary font-bold dark:text-white">Admin Command Center</h1>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="openAddProductModal()" class="flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-sm text-label-sm tracking-wide uppercase hover:bg-primary/90 transition-all active:scale-95 shadow font-bold dark:bg-[#c5a059] dark:text-[#001809]">
+                        <span class="material-symbols-outlined text-[18px]">add</span>
+                        Upload Product
+                    </button>
+                    <a href="/customer/" class="bg-white border border-outline-variant px-4 py-2.5 rounded-full font-label-sm text-label-sm tracking-wide uppercase hover:bg-surface-container transition-all text-primary font-bold dark:bg-white/5 dark:text-white dark:border-white/20">
+                        View Store
+                    </a>
+                </div>
+            </header>
+
+            <!-- Scrollable Content Grid -->
+            <div class="flex-1 overflow-y-auto p-gutter-desktop space-y-gutter-desktop custom-scrollbar">
+                
+                <!-- Metrics cards grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+                    
+                    <!-- Sales revenue Card -->
+                    <div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow border border-outline-variant/10 group transition-all duration-300 dark:bg-black/40 dark:border-white/5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary font-bold">
+                                <span class="material-symbols-outlined">payments</span>
+                            </div>
+                            <span class="text-xs font-label-sm text-primary flex items-center gap-1 font-semibold dark:text-[#e9c176]">
+                                <span class="material-symbols-outlined text-[14px]">trending_up</span> 100% Live
+                            </span>
+                        </div>
+                        <p class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-1 font-semibold dark:text-gray-300">Total Sales</p>
+                        <h3 id="admin-stat-sales" class="font-display-lg text-headline-lg text-primary font-bold dark:text-white">₹0.00</h3>
+                    </div>
+                    
+                    <!-- Active orders Card -->
+                    <div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow border border-outline-variant/10 group transition-all duration-300 dark:bg-black/40 dark:border-white/5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                            </div>
+                            <span class="text-xs font-label-sm text-primary flex items-center gap-1 font-semibold dark:text-[#e9c176]">
+                                <span class="material-symbols-outlined text-[14px]">pending_actions</span> Active
+                            </span>
+                        </div>
+                        <p class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-1 font-semibold dark:text-gray-300">Active Orders</p>
+                        <h3 id="admin-stat-orders" class="font-display-lg text-headline-lg text-primary font-bold dark:text-white">0</h3>
+                    </div>
+                    
+                    <!-- Low Stock Alerts Card -->
+                    <div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow border border-outline-variant/10 group transition-all duration-300 dark:bg-black/40 dark:border-white/5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-on-error-container">
+                                <span class="material-symbols-outlined">warning</span>
+                            </div>
+                            <span class="text-xs font-label-sm text-error uppercase tracking-tighter font-bold">Action Needed</span>
+                        </div>
+                        <p class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-1 font-semibold dark:text-gray-300">Stock Alerts</p>
+                        <h3 id="admin-stat-stock-alerts" class="font-display-lg text-headline-lg text-primary font-bold dark:text-white">0</h3>
+                    </div>
+                    
+                    <!-- Unique Customers Card -->
+                    <div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow border border-outline-variant/10 group transition-all duration-300 dark:bg-black/40 dark:border-white/5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">group</span>
+                            </div>
+                            <span class="text-xs font-label-sm text-primary flex items-center gap-1 font-semibold dark:text-[#e9c176]">
+                                <span class="material-symbols-outlined text-[14px]">contacts</span> Total
+                            </span>
+                        </div>
+                        <p class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-1 font-semibold dark:text-gray-300">Total Customers</p>
+                        <h3 id="admin-stat-customers" class="font-display-lg text-headline-lg text-primary font-bold dark:text-white">0</h3>
+                    </div>
+                </div>
+
+                <!-- ADMIN TAB CONTENT CONTAINER -->
+                <div class="space-y-gutter-desktop">
+                    
+                    <!-- TAB 1: OVERVIEW DASHBOARD -->
+                    <div id="admin-panel-overview" class="admin-tab-content space-y-gutter-desktop">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-desktop">
+                            <div class="lg:col-span-2 bg-surface-container-lowest p-gutter-desktop rounded-xl soft-shadow border border-outline-variant/10 relative overflow-hidden h-[320px] dark:bg-black/40 dark:border-white/5">
+                                <div class="flex justify-between items-center mb-8 relative z-10">
+                                    <div>
+                                        <h4 class="font-title-md text-title-md text-primary font-bold dark:text-white">Store Sales Activity</h4>
+                                        <p class="text-xs text-on-surface-variant dark:text-gray-300">Real-time simulation of Apple Brand premium groceries sales</p>
+                                    </div>
+                                    <span class="text-xs bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-bold">Live Synced</span>
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 h-44 flex items-end px-gutter-desktop gap-3 pb-8 z-0">
+                                    <div class="flex-1 bg-primary/10 rounded-t-lg transition-all hover:bg-primary/30" style="height: 35%;" title="Mon: ₹12,000"></div>
+                                    <div class="flex-1 bg-primary/15 rounded-t-lg transition-all hover:bg-primary/35" style="height: 55%;" title="Tue: ₹24,500"></div>
+                                    <div class="flex-1 bg-primary/10 rounded-t-lg transition-all hover:bg-primary/30" style="height: 25%;" title="Wed: ₹8,000"></div>
+                                    <div class="flex-1 bg-primary/20 rounded-t-lg transition-all hover:bg-primary/45" style="height: 75%;" title="Thu: ₹31,000"></div>
+                                    <div class="flex-1 bg-primary rounded-t-lg transition-all hover:bg-primary/90" style="height: 95%;" title="Today (Live)"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-surface-container-lowest p-gutter-desktop rounded-xl soft-shadow border border-outline-variant/10 flex flex-col justify-between dark:bg-black/40 dark:border-white/5">
+                                <h4 class="font-title-md text-title-md text-primary font-bold mb-4 dark:text-white">Inventory Mix Breakdown</h4>
+                                <div class="space-y-4 flex-grow flex flex-col justify-center">
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between text-xs font-label-sm uppercase tracking-wider font-semibold">
+                                            <span>Premium Spices</span>
+                                            <span id="txt-mix-spices-pct">0%</span>
+                                        </div>
+                                        <div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden dark:bg-white/10">
+                                            <div id="bar-mix-spices" class="h-full bg-primary rounded-full transition-all duration-700 dark:bg-[#c5a059]" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between text-xs font-label-sm uppercase tracking-wider font-semibold">
+                                            <span>Heritage Masalas</span>
+                                            <span id="txt-mix-masalas-pct">0%</span>
+                                        </div>
+                                        <div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden dark:bg-white/10">
+                                            <div id="bar-mix-masalas" class="h-full bg-secondary rounded-full transition-all duration-700 dark:bg-secondary-fixed-dim" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between text-xs font-label-sm uppercase tracking-wider font-semibold">
+                                            <span>Groceries</span>
+                                            <span id="txt-mix-groceries-pct">0%</span>
+                                        </div>
+                                        <div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden dark:bg-white/10">
+                                            <div id="bar-mix-groceries" class="h-full bg-outline rounded-full transition-all duration-700" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: INVENTORY MANAGER -->
+                    <div id="admin-panel-inventory" class="admin-tab-content hidden">
+                        <section id="admin-inventory-section" class="bg-surface-container-lowest rounded-xl soft-shadow border border-outline-variant/10 overflow-hidden dark:bg-black/40 dark:border-white/5">
+                            <div class="px-6 py-5 flex justify-between items-center border-b border-outline-variant/30 dark:border-white/5">
+                                <h4 class="font-title-md text-title-md text-primary font-bold dark:text-white">Catalog Stock & Spec Manager</h4>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-surface-container-low border-b border-outline-variant/30 dark:bg-black/20 dark:border-white/5">
+                                        <tr>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">ID</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Product Specs</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Category</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">MRP Price</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Pack Size</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Stock Status</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold text-right dark:text-gray-300">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-inventory-table-body" class="divide-y divide-outline-variant/20 dark:divide-white/5">
+                                        <!-- Rendered dynamically by JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- TAB 3: ORDERS QUEUE -->
+                    <div id="admin-panel-orders" class="admin-tab-content hidden">
+                        <section id="admin-orders-section" class="bg-surface-container-lowest rounded-xl soft-shadow border border-outline-variant/10 overflow-hidden dark:bg-black/40 dark:border-white/5">
+                            <div class="px-6 py-5 flex justify-between items-center border-b border-outline-variant/30 dark:border-white/5">
+                                <h4 class="font-title-md text-title-md text-primary font-bold dark:text-white">Sales Order Queue</h4>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-surface-container-low border-b border-outline-variant/30 dark:bg-black/20 dark:border-white/5">
+                                        <tr>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Order ID</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Customer Info</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Items Purchased</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Shipment Status</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Grand Total</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold text-right dark:text-gray-300">Update Queue</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-orders-table-body" class="divide-y divide-outline-variant/20 dark:divide-white/5">
+                                        <!-- Rendered dynamically by JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- TAB 4: CUSTOMERS LIST -->
+                    <div id="admin-panel-customers" class="admin-tab-content hidden">
+                        <section id="admin-customers-section" class="bg-surface-container-lowest rounded-xl soft-shadow border border-outline-variant/10 overflow-hidden dark:bg-black/40 dark:border-white/5">
+                            <div class="px-6 py-5 flex justify-between items-center border-b border-outline-variant/30 dark:border-white/5">
+                                <h4 class="font-title-md text-title-md text-primary font-bold dark:text-white">Customer Directory</h4>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-surface-container-low border-b border-outline-variant/30 dark:bg-black/20 dark:border-white/5">
+                                        <tr>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Customer</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Email Address</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300">Shipping Address</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300 text-center">Orders Placed</th>
+                                            <th class="px-6 py-4 font-label-sm text-xs text-on-surface-variant uppercase tracking-widest font-bold dark:text-gray-300 text-right">Total Spent</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-customers-table-body" class="divide-y divide-outline-variant/20 dark:divide-white/5">
+                                        <!-- Rendered dynamically by JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                
+                <div class="h-20"></div> <!-- Bottom Spacer -->
+            </div>
+        </main>
+    </div>
+
+
+    <!-- ==================================================== -->
+    <!-- OVERLAYS AND MODAL WINDOWS -->
+    <!-- ==================================================== -->
+
+    <!-- 4. ADMIN PRODUCT ADD/EDIT SPECS FORM -->
+    <div id="product-crud-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm hidden px-4">
+        <div class="bg-white rounded-2xl w-full max-w-lg p-8 border border-outline-variant/40 shadow-2xl relative animate-fade-up max-h-[90vh] overflow-y-auto dark:bg-[#070b08] dark:border-white/10 dark:text-gray-100">
+            <button onclick="closeProductCrudModal()" class="absolute top-6 right-6 p-1 text-on-surface-variant hover:text-primary transition-all dark:hover:text-white">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <h2 id="product-modal-title" class="font-display-lg text-title-md font-bold text-primary mb-6 uppercase dark:text-white">Upload Specifications</h2>
+            
+            <form onsubmit="saveProductSubmit(event)" class="space-y-4">
+                <input id="prod-form-id" type="hidden" />
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="col-span-2">
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Product Name (English) *</label>
+                        <input id="prod-form-name-en" type="text" placeholder="e.g. Black Pepper" required 
+                               class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Tamil Name & Transl. *</label>
+                        <input id="prod-form-name-ta" type="text" placeholder="e.g. Milagu (மிளகு)" required 
+                               class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">MRP Price (₹) *</label>
+                        <input id="prod-form-price" type="number" placeholder="185" min="1" required 
+                               class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Pack Size *</label>
+                        <select id="prod-form-pack" class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 cursor-pointer dark:bg-white/5 dark:text-white">
+                            <option value="50g Pack">50g Pack</option>
+                            <option value="100g Pack">100g Pack</option>
+                            <option value="200g Pack">200g Pack</option>
+                            <option value="500g Pack">500g Pack</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Category *</label>
+                        <select id="prod-form-category" class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 cursor-pointer dark:bg-white/5 dark:text-white">
+                            <option value="Spices">Spices</option>
+                            <option value="Masalas">Masalas</option>
+                            <option value="Groceries">Groceries</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Stock Quantity (packs) *</label>
+                        <input id="prod-form-stock" type="number" placeholder="45" min="0" required 
+                               class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Custom Image URL</label>
+                    <input id="prod-form-image" type="text" placeholder="Leave empty for category default photo" 
+                           class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Product Description</label>
+                    <textarea id="prod-form-desc" rows="3" placeholder="Describe the origin, aroma, purity, and organic nature..." 
+                              class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"></textarea>
+                </div>
+
+                <div class="pt-4 border-t border-outline-variant/30 flex justify-end gap-3 dark:border-white/10">
+                    <button type="button" onclick="closeProductCrudModal()" class="border border-outline-variant px-6 py-2.5 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container transition-all text-primary font-bold dark:bg-white/5 dark:text-white dark:border-white/20">
+                        Cancel
+                    </button>
+                    <button id="product-form-action" type="submit" class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809]">
+                        Save Specs
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN FORGOT PASSWORD MODAL -->
+    <div id="forgot-password-modal" class="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-sm hidden px-4">
+        <div class="bg-white rounded-2xl w-full max-w-md p-8 border border-outline-variant/40 shadow-2xl relative animate-fade-up dark:bg-[#070b08] dark:border-white/10 dark:text-gray-100 flex flex-col gap-6">
+            <button onclick="closeForgotPasswordModal()" class="absolute top-6 right-6 p-1 text-on-surface-variant hover:text-primary transition-all dark:hover:text-white">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            
+            <div class="text-center flex flex-col items-center">
+                <img src="logo.jpg" alt="Apple Brand Spices Logo" class="w-12 h-12 rounded-full object-cover border border-primary/10 shadow-sm mb-2 dark:border-white/10"/>
+                <h3 class="brand-logo-font text-sm font-bold text-primary dark:text-[#e9c176] mb-1">Apple Brand Spices</h3>
+                <h2 id="forgot-modal-title" class="font-display-lg text-title-md font-bold text-primary dark:text-white uppercase">Password Recovery</h2>
+                <p id="forgot-modal-desc" class="text-xs text-on-surface-variant dark:text-gray-400 mt-1">Select authentication method to verify identity.</p>
+            </div>
+
+            <!-- STEP 1: Identification & Send OTP -->
+            <div id="forgot-step-1" class="space-y-4">
+                <!-- Tab Headers -->
+                <div class="flex border-b border-outline-variant/30 dark:border-white/10">
+                    <button type="button" id="tab-btn-email" onclick="setForgotTab('email')" 
+                            class="flex-1 pb-3 text-xs font-label-sm uppercase tracking-widest border-b-2 border-primary font-bold text-primary dark:border-[#e9c176] dark:text-[#e9c176] transition-all">
+                        Gmail Account
+                    </button>
+                    <button type="button" id="tab-btn-mobile" onclick="setForgotTab('mobile')" 
+                            class="flex-1 pb-3 text-xs font-label-sm uppercase tracking-widest border-b-2 border-transparent font-medium text-on-surface-variant hover:text-primary dark:hover:text-white transition-all">
+                        Mobile Number
+                    </button>
+                </div>
+
+                <form onsubmit="handleSendOTP(event)" class="space-y-4 pt-2">
+                    <div id="forgot-email-field">
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Registered Gmail</label>
+                        <input id="forgot-input-email" type="email" placeholder="julian.thorne@epicurean.com" 
+                               class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+                    
+                    <div id="forgot-mobile-field" class="hidden">
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Registered Mobile</label>
+                        <input id="forgot-input-mobile" type="tel" placeholder="e.g. 6382181561" 
+                               class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+
+                    <div id="forgot-step-1-error" class="hidden text-error text-xs font-bold bg-error-container/20 p-3 rounded-lg border border-error/20">
+                        <!-- Error text -->
+                    </div>
+
+                    <button type="submit" class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809]">
+                        Send Verification Code
+                    </button>
+                </form>
+            </div>
+
+            <!-- STEP 2: OTP Entry -->
+            <div id="forgot-step-2" class="space-y-4 hidden">
+                <form onsubmit="handleVerifyOTP(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-300">Enter 4-Digit OTP Code</label>
+                        <input id="forgot-input-otp" type="text" placeholder="xxxx" maxLength="4" required 
+                               class="w-full bg-surface-container border-none rounded-lg px-4 py-3 text-sm text-center tracking-widest text-lg focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                        <p class="text-[11px] text-on-surface-variant dark:text-gray-400 mt-2 text-center">
+                            We've sent a code to your registered contact. <br/>
+                            <span class="font-bold text-primary dark:text-[#e9c176]">Hint: Use simulated code 8822</span>
+                        </p>
+                    </div>
+
+                    <div id="forgot-step-2-error" class="hidden text-error text-xs font-bold bg-error-container/20 p-3 rounded-lg border border-error/20">
+                        <!-- Error text -->
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button type="button" onclick="resetRecoveryStep1()" class="flex-1 border border-outline-variant py-3 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:bg-surface-container transition-all text-primary font-bold dark:bg-white/5 dark:text-white dark:border-white/20">
+                            Back
+                        </button>
+                        <button type="submit" class="flex-1 bg-primary text-on-primary py-3 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809]">
+                            Verify Code
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- STEP 3: Verification Success & Credential Reveal -->
+            <div id="forgot-step-3" class="space-y-4 hidden text-center">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto dark:bg-[#c5a059]/20 dark:text-[#e9c176] mb-2">
+                    <span class="material-symbols-outlined text-2xl">verified_user</span>
+                </div>
+                <h4 class="font-bold text-sm text-primary dark:text-[#e9c176] uppercase tracking-wider">Identity Confirmed</h4>
+                <p class="text-xs text-on-surface-variant dark:text-gray-300">Your administrator account credentials have been retrieved:</p>
+                
+                <div class="bg-surface-container dark:bg-white/5 p-4 rounded-xl text-left font-mono text-xs space-y-2 select-all border border-outline-variant/20 dark:border-white/5">
+                    <div>
+                        <span class="text-on-surface-variant font-bold block text-[10px] uppercase tracking-widest">Admin Email:</span>
+                        <span id="recovered-email" class="text-primary dark:text-white font-bold select-all"></span>
+                    </div>
+                    <div class="pt-2 border-t border-outline-variant/30 dark:border-white/10">
+                        <span class="text-on-surface-variant font-bold block text-[10px] uppercase tracking-widest">Admin Password:</span>
+                        <span id="recovered-password" class="text-[#c5a059] font-bold select-all"></span>
+                    </div>
+                </div>
+
+                <button onclick="handleDirectSignIn()" type="button" class="w-full bg-primary text-on-primary py-3.5 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809] shadow-md">
+                    Directly Sign In
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN PROFILE DETAILS MODAL -->
+    <div id="admin-profile-modal" class="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-sm hidden px-4">
+        <div class="bg-white rounded-2xl w-full max-w-md p-8 border border-outline-variant/40 shadow-2xl relative animate-fade-up dark:bg-[#070b08] dark:border-white/10 dark:text-gray-100 flex flex-col gap-6">
+            <button onclick="closeAdminProfileModal()" class="absolute top-6 right-6 p-1 text-on-surface-variant hover:text-primary transition-all dark:hover:text-white" title="Close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            
+            <div class="text-center flex flex-col items-center gap-3">
+                <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-white overflow-hidden shadow-inner font-bold text-xl uppercase dark:bg-[#c5a059] dark:text-[#001809] border border-primary/10 dark:border-white/10">
+                    <img id="profile-detail-avatar-img" alt="Avatar" class="w-full h-full object-cover hidden" 
+                         src=""/>
+                    <span id="profile-detail-avatar-initials">JT</span>
+                </div>
+                <h3 id="profile-detail-name" class="brand-logo-font text-xl font-bold text-primary dark:text-[#e9c176]">Julian Thorne</h3>
+                <span id="profile-detail-role" class="px-3 py-1 bg-primary/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded-full tracking-wider text-primary dark:text-[#e9c176]">
+                    Brand Admin
+                </span>
+            </div>
+
+            <div class="space-y-4 pt-2">
+                <div class="bg-surface-container dark:bg-white/5 p-4 rounded-xl space-y-3 border border-outline-variant/20 dark:border-white/5 text-left">
+                    <div>
+                        <span class="text-on-surface-variant dark:text-gray-400 font-bold block text-[10px] uppercase tracking-widest mb-1">Full Name</span>
+                        <span id="profile-detail-name-label" class="text-primary dark:text-white font-medium text-sm select-all block">Julian Thorne</span>
+                        <input id="profile-edit-name" type="text" class="hidden w-full bg-white dark:bg-black/40 border border-outline-variant/40 rounded px-2.5 py-1.5 text-sm text-primary dark:text-white focus:ring-1 focus:ring-primary/20" />
+                    </div>
+                    <div class="pt-3 border-t border-outline-variant/30 dark:border-white/10">
+                        <span class="text-on-surface-variant dark:text-gray-400 font-bold block text-[10px] uppercase tracking-widest mb-1">Email Address</span>
+                        <span id="profile-detail-email" class="text-primary dark:text-white font-medium text-sm select-all block">julian.thorne@epicurean.com</span>
+                        <input id="profile-edit-email" type="email" class="hidden w-full bg-white dark:bg-black/40 border border-outline-variant/40 rounded px-2.5 py-1.5 text-sm text-primary dark:text-white focus:ring-1 focus:ring-primary/20" />
+                    </div>
+                    <div class="pt-3 border-t border-outline-variant/30 dark:border-white/10">
+                        <span class="text-on-surface-variant dark:text-gray-400 font-bold block text-[10px] uppercase tracking-widest mb-1">Mobile Number</span>
+                        <span id="profile-detail-mobile" class="text-primary dark:text-white font-medium text-sm select-all block">6382181561</span>
+                        <input id="profile-edit-mobile" type="tel" class="hidden w-full bg-white dark:bg-black/40 border border-outline-variant/40 rounded px-2.5 py-1.5 text-sm text-primary dark:text-white focus:ring-1 focus:ring-primary/20" />
+                    </div>
+                    <div id="profile-edit-error" class="hidden text-error text-[10px] font-bold mt-1 bg-error-container/20 p-1.5 rounded border border-error/20">
+                        <!-- Error filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Password fields container (hidden by default) -->
+                <div id="profile-change-password-container" class="hidden space-y-3 border-t border-outline-variant/30 dark:border-white/10 pt-4">
+                    <h4 class="text-[11px] font-label-sm uppercase tracking-widest text-primary font-bold dark:text-[#e9c176]">Update Secret Password</h4>
+                    <div>
+                        <label class="block text-[10px] font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-400">Current Password</label>
+                        <input id="profile-current-password" type="password" required 
+                               class="w-full bg-surface-container border-none rounded-lg px-3 py-2 text-xs focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-400">New Password</label>
+                        <input id="profile-new-password" type="password" required 
+                               class="w-full bg-surface-container border-none rounded-lg px-3 py-2 text-xs focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-label-sm uppercase tracking-widest text-on-surface-variant mb-1 font-semibold dark:text-gray-400">Confirm New Password</label>
+                        <input id="profile-confirm-password" type="password" required 
+                               class="w-full bg-surface-container border-none rounded-lg px-3 py-2 text-xs focus:ring-1 focus:ring-primary/20 dark:bg-white/5 dark:text-white"/>
+                    </div>
+                    
+                    <div id="profile-password-error" class="hidden text-error text-[11px] font-bold bg-error-container/20 p-2 rounded border border-error/20">
+                        <!-- Filled by JS -->
+                    </div>
+
+                    <div class="flex gap-2 pt-2">
+                        <button onclick="toggleChangePasswordFields(false)" type="button" class="flex-1 border border-outline-variant py-2 rounded-lg font-label-sm text-[11px] uppercase tracking-widest hover:bg-surface-container transition-all text-primary font-bold dark:bg-white/5 dark:text-white dark:border-white/20">
+                            Cancel
+                        </button>
+                        <button onclick="executeUpdatePassword(event)" type="button" class="flex-1 bg-primary text-on-primary py-2 rounded-lg font-label-sm text-[11px] uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809]">
+                            Save New
+                        </button>
+                    </div>
+                </div>
+
+                 <!-- Profile details edit buttons (hidden by default) -->
+                <div id="profile-edit-actions" class="hidden flex gap-2">
+                    <button onclick="toggleEditProfileDetails(false)" type="button" class="flex-1 border border-outline-variant py-2.5 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:bg-surface-container transition-all text-primary font-bold dark:bg-white/5 dark:text-white dark:border-white/20">
+                        Cancel
+                    </button>
+                    <button onclick="executeUpdateProfileDetails(event)" type="button" class="flex-1 bg-primary text-on-primary py-2.5 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809]">
+                        Save Details
+                    </button>
+                </div>
+
+                <div id="profile-action-buttons" class="space-y-2">
+                    <button id="btn-edit-profile-details" onclick="toggleEditProfileDetails(true)" type="button" class="w-full border border-primary text-primary py-2.5 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:bg-primary/5 transition-all font-bold dark:border-white/20 dark:text-white dark:hover:bg-white/5">
+                        Edit Details
+                    </button>
+                    <button id="btn-toggle-change-password" onclick="toggleChangePasswordFields(true)" type="button" class="w-full border border-primary text-primary py-2.5 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:bg-primary/5 transition-all font-bold dark:border-white/20 dark:text-white dark:hover:bg-white/5">
+                        Change Password
+                    </button>
+                    <button onclick="closeAdminProfileModal()" type="button" class="w-full bg-primary text-on-primary py-2.5 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809] shadow-md">
+                        Dismiss Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOMER DETAILS MODAL -->
+    <div id="customer-details-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm hidden px-4">
+        <div class="bg-white rounded-2xl w-full max-w-lg p-8 border border-outline-variant/40 shadow-2xl relative animate-fade-up dark:bg-[#070b08] dark:border-white/10 dark:text-gray-100 flex flex-col gap-6 max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button onclick="closeCustomerDetailsModal()" class="absolute top-6 right-6 p-1 text-on-surface-variant hover:text-primary transition-all dark:hover:text-white" title="Close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            
+            <div class="text-center flex flex-col items-center gap-3">
+                <div id="cust-modal-avatar-container" class="w-16 h-16 rounded-full flex items-center justify-center text-primary font-bold text-lg uppercase shadow-inner">
+                    <span id="cust-modal-avatar-initials">EK</span>
+                </div>
+                <h3 id="cust-modal-name" class="brand-logo-font text-xl font-bold text-primary dark:text-[#e9c176]">Eleanor Kade</h3>
+                <span class="px-3 py-1 bg-primary/5 dark:bg-white/5 text-[10px] font-bold uppercase rounded-full tracking-wider text-primary dark:text-gray-300">
+                    Premium Customer
+                </span>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Info Section -->
+                <div class="bg-surface-container dark:bg-white/5 p-5 rounded-xl space-y-4 border border-outline-variant/20 dark:border-white/5 text-left">
+                    <div>
+                        <span class="text-on-surface-variant dark:text-gray-400 font-bold block text-[10px] uppercase tracking-widest">Email Address</span>
+                        <span id="cust-modal-email" class="text-primary dark:text-white font-medium text-sm select-all">eleanor.kade@gmail.com</span>
+                    </div>
+                    <div class="pt-3 border-t border-outline-variant/30 dark:border-white/10">
+                        <span class="text-on-surface-variant dark:text-gray-400 font-bold block text-[10px] uppercase tracking-widest">Default Shipping Address</span>
+                        <span id="cust-modal-address" class="text-primary dark:text-white font-medium text-sm select-all">42 Pine Crest Ave, Chennai</span>
+                    </div>
+                    <div class="pt-3 border-t border-outline-variant/30 dark:border-white/10 grid grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-on-surface-variant dark:text-gray-400 font-bold block text-[10px] uppercase tracking-widest">Total Orders</span>
+                            <span id="cust-modal-orders-count" class="text-primary dark:text-white font-bold text-lg">2</span>
+                        </div>
+                        <div>
+                            <span class="text-on-surface-variant dark:text-gray-400 font-bold block text-[10px] uppercase tracking-widest">Total Spent</span>
+                            <span id="cust-modal-total-spent" class="text-primary dark:text-[#e9c176] font-bold text-lg">₹530.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders History Section -->
+                <div class="space-y-2 text-left">
+                    <span class="text-on-surface-variant dark:text-gray-400 font-bold text-[10px] uppercase tracking-widest block pl-1">Order History</span>
+                    <div id="cust-modal-orders-list" class="space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-1">
+                        <!-- Dynamically filled by JS -->
+                    </div>
+                </div>
+
+                <button onclick="closeCustomerDetailsModal()" type="button" class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-sm text-xs uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all font-bold dark:bg-[#c5a059] dark:text-[#001809] shadow-md">
+                    Close Directory Card
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=1.2"></script>
+</body>
+</html>

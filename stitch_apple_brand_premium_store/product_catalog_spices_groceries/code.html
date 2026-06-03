@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EPICUREAN | Premium Spices &amp; Groceries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=Ibm+Plex+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(252, 248, 251, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 24, 9, 0.05);
+        }
+        .product-image-container {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .product-card:hover .product-image-container {
+            transform: scale(1.05);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"inverse-primary": "#accfb3", "on-primary-fixed-variant": "#2f4d38", "on-tertiary-container": "#8c908f", "on-tertiary-fixed": "#181c1b", "surface-container-highest": "#e4e2e4", primary: "#001809", "surface-bright": "#fcf8fb", "secondary-fixed-dim": "#e9c176", "inverse-surface": "#303032", "surface-tint": "#46654f", "on-error-container": "#93000a", "tertiary-container": "#252928", "tertiary-fixed-dim": "#c4c7c5", "on-background": "#1b1b1d", outline: "#727972", "primary-fixed-dim": "#accfb3", "on-tertiary": "#ffffff", "surface-container": "#f0edef", "secondary-fixed": "#ffdea5", "on-primary-container": "#76977e", "error-container": "#ffdad6", "primary-fixed": "#c8ebce", "surface-container-low": "#f6f3f5", "secondary-container": "#fed488", "surface-dim": "#dcd9dc", "on-secondary-container": "#785a1a", "surface-container-high": "#eae7ea", "primary-container": "#0f2e1b", "on-primary": "#ffffff", "tertiary-fixed": "#e0e3e1", error: "#ba1a1a", "on-surface-variant": "#424842", "inverse-on-surface": "#f3f0f2", tertiary: "#111514", "on-secondary-fixed-variant": "#5d4201", "outline-variant": "#c2c8c0", "on-secondary-fixed": "#261900", "on-surface": "#1b1b1d", surface: "#fcf8fb", background: "#fcf8fb", "surface-container-lowest": "#ffffff", secondary: "#775a19", "on-tertiary-fixed-variant": "#434846", "on-error": "#ffffff", "surface-variant": "#e4e2e4", "on-primary-fixed": "#02210f", "on-secondary": "#ffffff"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}, spacing: {"gutter-desktop": "24px", "container-max": "1440px", base: "8px", "margin-desktop": "64px", "gutter-mobile": "16px", "margin-mobile": "20px"}, fontFamily: {"display-lg": ["Climate Crisis"], "body-lg": ["Inter"], "headline-lg": ["Climate Crisis"], "label-sm": ["IBM Plex Sans"], "body-md": ["Inter"], "title-md": ["Climate Crisis"], "headline-lg-mobile": ["Climate Crisis"], headline: ["Bodoni Moda"], display: ["Bodoni Moda"], body: ["Inter"], label: ["Ibm Plex Sans"]}, fontSize: {"display-lg": ["56px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "title-md": ["20px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["28px", {lineHeight: "1.2", fontWeight: "400"}]}}}};</script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-primary/10 shadow-sm bg-surface">
+<div class="flex justify-between items-center px-gutter-desktop max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-title-md font-bold tracking-tighter text-primary">EPICUREAN</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-primary border-b-2 border-primary pb-1" href="#">Spices</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Grains</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Oils</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Tea</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Gifts</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-primary/5 rounded-full transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface">search</span>
+</button>
+<button class="p-2 hover:bg-primary/5 rounded-full transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface">shopping_cart</span>
+</button>
+<button class="p-2 hover:bg-primary/5 rounded-full transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-margin-desktop px-gutter-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop">
+<!-- Filter Sidebar -->
+<aside class="md:col-span-3 lg:col-span-2 hidden md:block">
+<div class="sticky top-32 space-y-8">
+<div>
+<h3 class="font-title-md text-title-md mb-6 text-primary">Categories</h3>
+<ul class="space-y-4">
+<li class="">
+<a class="flex items-center justify-between group" href="#">
+<span class="font-body-md text-primary font-medium">Spices</span>
+<span class="text-label-sm font-label-sm bg-primary/5 px-2 py-1 rounded-full text-on-primary-container">24</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center justify-between group text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="font-body-md">Masalas</span>
+<span class="text-label-sm font-label-sm bg-surface-container-low px-2 py-1 rounded-full">12</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center justify-between group text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="font-body-md">Groceries</span>
+<span class="text-label-sm font-label-sm bg-surface-container-low px-2 py-1 rounded-full">48</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="pt-8 border-t border-outline-variant">
+<h3 class="font-title-md text-title-md mb-6 text-primary">Origin</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">Organic Estate</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">Himalayan Region</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="md:col-span-9 lg:col-span-10">
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 bg-surface">
+<div>
+<nav class="flex items-center gap-2 text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant mb-2">
+<span class="">Home</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary">Whole Spices</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-primary">Artisan Whole Spices</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-body-md text-on-surface-variant">6 Products Found</span>
+<select class="bg-transparent border-b border-outline text-body-md font-body-md py-1 focus:border-primary transition-colors outline-none cursor-pointer">
+<option>Relevance</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</header>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-gutter-desktop gap-y-margin-desktop">
+<!-- Product Card: Pepper -->
+<div class="product-card flex flex-col h-full group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#FBFBFB] shadow-[0_40px_40px_-15px_rgba(0,24,9,0.04)] mb-6">
+<img class="product-image-container w-full h-full object-cover" data-alt="A high-end, editorial close-up of premium black peppercorns spilling across a textured grey stone surface. The lighting is dramatic and moody, coming from the side to highlight the rough textures of the peppercorns. The color palette is minimalist with deep blacks, subtle greys, and organic earthy tones, evoking a sense of gourmet culinary excellence and pristine quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHVqvUx6NKL_q2mKS-kUutnxGPJIZXitcchjNQjWB0niSIWmNDAblnNqovstzssRGad8wDfy362--nTbjgCBnSazOkMdoUGvBtW9Azj6o1E2mXo79ucKLnYgWwAPZtftneoLYl43QBS3EIvh7Vz7Tibrd-s1GnmdWlE0Bdfw1NLnIO4CHm-h-jNPWYigv_0uViC-YufF2E1lE5J9H3xeX5dsCV0xbHso_X-ejhlRoWUXKH-Irgbf2Nye0LFopOoQPeJ-K0Ylug-T8"/>
+<span class="absolute top-4 left-4 font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full uppercase tracking-tighter">Organic</span>
+</div>
+<div class="flex flex-col flex-grow">
+<h2 class="font-title-md text-title-md text-primary mb-1">Black Pepper</h2>
+<p class="font-body-md text-on-surface-variant italic mb-4">Milagu (மிளகு)</p>
+<div class="mt-auto">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">100g Pack</span>
+<span class="font-headline-lg text-title-md text-primary">₹185</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Cart</button>
+<button class="py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all active:scale-95">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card: Jeera -->
+<div class="product-card flex flex-col h-full group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#FBFBFB] shadow-[0_40px_40px_-15px_rgba(0,24,9,0.04)] mb-6">
+<img class="product-image-container w-full h-full object-cover" data-alt="Premium quality cumin seeds arranged in a minimalist, artistic pattern on a clean white surface. Soft, bright natural light fills the frame, creating a sense of freshness and purity. The overall aesthetic is airy and sophisticated, featuring warm ochre and golden-brown tones of the spice against a pristine high-key background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKWso_qwL7XC4Oupkevz4uL9-0sIkw7o85768zlDVCYF8IjTiVKZjcJjqQpSj2FLzKIEwEA-_qWiarCIcmdDpOgVSxU7reBWe0d0m2fnAr8tZdvjZV-p9YLs1IqAXZIOuIwHzUG2wSVrgi3UrywhT3VX9lyBqQP1JbkmFS0KTfAh2MMvGRQCQW9Zbkj38Quvmv_Wfakm39F0r7QelPBEVM3yYWm2lPw2VQ2H_2siOiFVQp-78V6Iq0wf8ZxruP_ONCMGS-NqW0ex8"/>
+<span class="absolute top-4 left-4 font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full uppercase tracking-tighter">Premium</span>
+</div>
+<div class="flex flex-col flex-grow">
+<h2 class="font-title-md text-title-md text-primary mb-1">Cumin Seeds (Jeera)</h2>
+<p class="font-body-md text-on-surface-variant italic mb-4">Seeragam (சீரகம்)</p>
+<div class="mt-auto">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">100g Pack</span>
+<span class="font-headline-lg text-title-md text-primary">₹120</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Cart</button>
+<button class="py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all active:scale-95">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card: Clove -->
+<div class="product-card flex flex-col h-full group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#FBFBFB] shadow-[0_40px_40px_-15px_rgba(0,24,9,0.04)] mb-6">
+<img class="product-image-container w-full h-full object-cover" data-alt="A collection of dried whole cloves displayed in a minimalist wooden bowl. The lighting is soft and directional, casting gentle shadows that emphasize the unique shape of the cloves. The color palette consists of rich, deep browns and warm wood tones, creating a luxury artisanal atmosphere. The scene is clean and focused, highlighting the purity of the raw ingredient." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlNkHC3nXEzfwn7MVFKmEfEpaJXIhS-Qiw2qtZsWQQpbHzUGec_ppB8xB8mYxKMrWXByOxQRoH6ZTOdRFR9XiIaO8BYtTVUm1VlcHgNyGU79Y_f7v3MpFcx9JLLN27W0OrVCLGhveZwmy7i1dwA5U0pFCJiERDaKlnVCo1ObROqN1g_HtJr6x60h3p0gsZZAsBKkhtSZhIXRZ0q0eLheQEst9ZEW9cHu_dDQ7XqEPMOKpOVK0IAIKeWlrUQXbpIIu33AlCcUP78Zk"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h2 class="font-title-md text-title-md text-primary mb-1">Whole Cloves</h2>
+<p class="font-body-md text-on-surface-variant italic mb-4">Kirambu (கிராம்பு)</p>
+<div class="mt-auto">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">50g Pack</span>
+<span class="font-headline-lg text-title-md text-primary">₹145</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Cart</button>
+<button class="py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all active:scale-95">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card: Cardamom -->
+<div class="product-card flex flex-col h-full group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#FBFBFB] shadow-[0_40px_40px_-15px_rgba(0,24,9,0.04)] mb-6">
+<img class="product-image-container w-full h-full object-cover" data-alt="Lush green cardamom pods scattered on a minimalist white ceramic plate. The image is captured in bright, natural daylight, emphasizing the vibrant green hues of the pods. The composition is clean and modern, with a focus on symmetry and balance. The lighting is high-key, creating a fresh and premium look that reflects high-end culinary standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD26PK_pMMvE2aoXpxexL0iaHo36353GHd9He0cRypUr2a8RV1vhGlzzHiATyWMJ1JYjfpqAdNUuPX-9dCXPP3lcfsxoBKpFexUjxn7EcUYMiuvzE0J_TFjjZ4t6kI1N61HokzcQjF3hU3g1boJalgBKZGrFJfqpoBEJUFsL3he3PFzj6EMFkCkrA2dSvs2wKy79I8z5fah1GvwN78yVHWvLbVsUHUzJOIVWbOmP8dUvrXz7uP1bAYzOh_liYFN7GTKki_8R4eBIFU"/>
+<span class="absolute top-4 left-4 font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full uppercase tracking-tighter">Limited</span>
+</div>
+<div class="flex flex-col flex-grow">
+<h2 class="font-title-md text-title-md text-primary mb-1">Green Cardamom</h2>
+<p class="font-body-md text-on-surface-variant italic mb-4">Elakkai (ஏலக்காய்)</p>
+<div class="mt-auto">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">50g Pack</span>
+<span class="font-headline-lg text-title-md text-primary">₹210</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Cart</button>
+<button class="py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all active:scale-95">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card: Mustard -->
+<div class="product-card flex flex-col h-full group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#FBFBFB] shadow-[0_40px_40px_-15px_rgba(0,24,9,0.04)] mb-6">
+<img class="product-image-container w-full h-full object-cover" data-alt="A minimalist composition of tiny black mustard seeds on a light grey concrete background. The overhead shot focuses on the intricate texture of the seeds. The lighting is flat and even, characteristic of a clean tech-product aesthetic. The monochromatic palette of blacks and soft greys creates a sophisticated, modern, and authoritative visual presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_hQ9pChf0i0c8hnGmTNUFuBZA5F8zV6ben-EEw55jMldzKFznKYw2sh_cm5Bv0jfOC2M_gSp_jgYdFv-XClkcELPnpt7ZIY722V9tS755CXIwEQK2gjKYsgx2nlswGZb632qIBT397B23DOaDc1UrRrBpYXCAComnBPad7ZFyCmxLbNg7qoMw8Ogmjowk_uvqQAARZ6EAiYXpVTeppmsMcCAXnSbp6HSHOsuvolrBT18yV3Q8_at0QI9U0ZHli8Ez_WK6HDwLirU"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h2 class="font-title-md text-title-md text-primary mb-1">Mustard Seeds</h2>
+<p class="font-body-md text-on-surface-variant italic mb-4">Kadugu (கடுகு)</p>
+<div class="mt-auto">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">100g Pack</span>
+<span class="font-headline-lg text-title-md text-primary">₹65</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Cart</button>
+<button class="py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all active:scale-95">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card: Fenugreek -->
+<div class="product-card flex flex-col h-full group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-[#FBFBFB] shadow-[0_40px_40px_-15px_rgba(0,24,9,0.04)] mb-6">
+<img class="product-image-container w-full h-full object-cover" data-alt="Artisanal fenugreek seeds presented in a small glass beaker, emphasizing scientific precision and quality control. The lighting is crisp and cool, highlighting the amber and tan colors of the seeds. The scene is set against a clean, white, minimalist laboratory-style background, reinforcing the brand's commitment to transparency and meticulous curation of everyday ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCswKuIt5WpZ31Tuj0E24CDg83b2mmyAszZecsW4W5p35WYjEReDP0A5I5No11vSBjyiNXD1hlG5HVwIm8KcsqJeKMpouQNNpFDFY3TYJlaGpHcw_GEVcU9fTRWnvTVSZYhbJ3gbiXA8w3Y3EFw7zygdCB7VkzkC4HiDXPQeHnHF11jr-w_vBWcrVnO0JPZWeMIDP6E1LrO8TPR6zF2ebsLtZj0POw3zi-YqbUo6u6J1BDRnrqmF16mKe8kpza1DPm_7Jp89pIFggo"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h2 class="font-title-md text-title-md text-primary mb-1">Fenugreek Seeds</h2>
+<p class="font-body-md text-on-surface-variant italic mb-4">Vendhayam (வெந்தயம்)</p>
+<div class="mt-auto">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">100g Pack</span>
+<span class="font-headline-lg text-title-md text-primary">₹75</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Cart</button>
+<button class="py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all active:scale-95">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-margin-desktop bg-surface-container-low border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop px-gutter-desktop py-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-display-lg text-headline-lg font-bold text-primary">EPICUREAN</div>
+<p class="font-body-md text-on-surface-variant max-w-xs">Elevating the everyday kitchen with meticulously curated, organic, and premium spices from around the globe.</p>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-6">Explore</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Sourcing</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Sustainability</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Wholesale</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-6">Support</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Shipping</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Returns</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-6">Newsletter</h4>
+<p class="font-body-md text-on-surface-variant mb-4">Join for recipes and first access to seasonal harvests.</p>
+<div class="flex border-b border-primary">
+<input class="bg-transparent border-none focus:ring-0 py-2 w-full font-body-md" placeholder="Email address" type="email"/>
+<button class="p-2 text-primary active:translate-x-1 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-gutter-desktop py-8 max-w-container-max mx-auto border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body-md text-on-surface-variant opacity-80">© 2024 Epicurean Spices &amp; Groceries. All rights reserved.</span>
+<div class="flex gap-6">
+<a class="material-symbols-outlined text-primary opacity-60 hover:opacity-100 transition-opacity" href="#">language</a>
+<a class="material-symbols-outlined text-primary opacity-60 hover:opacity-100 transition-opacity" href="#">share</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Navigation (Bottom Nav) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface/80 backdrop-blur-xl border-t border-primary/5 z-50 px-6 py-3 flex justify-between items-center shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] uppercase font-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">category</span>
+<span class="text-[10px] uppercase font-label-sm">Shop</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] uppercase font-label-sm">Saved</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] uppercase font-label-sm">Cart</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for category selection
+        document.querySelectorAll('aside ul li a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('aside ul li a').forEach(l => {
+                    l.classList.remove('text-primary', 'font-medium');
+                    l.classList.add('text-on-surface-variant');
+                });
+                link.classList.remove('text-on-surface-variant');
+                link.classList.add('text-primary', 'font-medium');
+            });
+        });
+
+        // Simple button hover effects
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                if (btn.classList.contains('active:scale-95')) {
+                    // Logic already handled by tailwind classes
+                }
+            });
+        });
+    </script>
+</body></html>

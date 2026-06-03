@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Selection | EPICUREAN</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=Ibm+Plex+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=IBM+Plex+Sans:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(252, 248, 251, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        body {
+            background-color: #fcf8fb;
+            color: #1b1b1d;
+            overflow-x: hidden;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"inverse-primary": "#accfb3", "on-primary-fixed-variant": "#2f4d38", "on-tertiary-container": "#8c908f", "on-tertiary-fixed": "#181c1b", "surface-container-highest": "#e4e2e4", primary: "#001809", "surface-bright": "#fcf8fb", "secondary-fixed-dim": "#e9c176", "inverse-surface": "#303032", "surface-tint": "#46654f", "on-error-container": "#93000a", "tertiary-container": "#252928", "tertiary-fixed-dim": "#c4c7c5", "on-background": "#1b1b1d", outline: "#727972", "primary-fixed-dim": "#accfb3", "on-tertiary": "#ffffff", "surface-container": "#f0edef", "secondary-fixed": "#ffdea5", "on-primary-container": "#76977e", "error-container": "#ffdad6", "primary-fixed": "#c8ebce", "surface-container-low": "#f6f3f5", "secondary-container": "#fed488", "surface-dim": "#dcd9dc", "on-secondary-container": "#785a1a", "surface-container-high": "#eae7ea", "primary-container": "#0f2e1b", "on-primary": "#ffffff", "tertiary-fixed": "#e0e3e1", error: "#ba1a1a", "on-surface-variant": "#424842", "inverse-on-surface": "#f3f0f2", tertiary: "#111514", "on-secondary-fixed-variant": "#5d4201", "outline-variant": "#c2c8c0", "on-secondary-fixed": "#261900", "on-surface": "#1b1b1d", surface: "#fcf8fb", background: "#fcf8fb", "surface-container-lowest": "#ffffff", secondary: "#775a19", "on-tertiary-fixed-variant": "#434846", "on-error": "#ffffff", "surface-variant": "#e4e2e4", "on-primary-fixed": "#02210f", "on-secondary": "#ffffff"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}, spacing: {"gutter-desktop": "24px", "container-max": "1440px", base: "8px", "margin-desktop": "64px", "gutter-mobile": "16px", "margin-mobile": "20px"}, fontFamily: {"display-lg": ["Climate Crisis"], "body-lg": ["Inter"], "headline-lg": ["Climate Crisis"], "label-sm": ["IBM Plex Sans"], "body-md": ["Inter"], "title-md": ["Climate Crisis"], "headline-lg-mobile": ["Climate Crisis"], headline: ["Bodoni Moda"], display: ["Bodoni Moda"], body: ["Inter"], label: ["Ibm Plex Sans"]}, fontSize: {"display-lg": ["56px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "title-md": ["20px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["28px", {lineHeight: "1.2", fontWeight: "400"}]}}}};</script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+<div class="flex justify-between items-center px-gutter-desktop max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-title-md font-bold tracking-tighter text-primary">EPICUREAN</div>
+<div class="hidden md:flex space-x-8 items-center h-full">
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Spices</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Grains</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Oils</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Tea</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Gifts</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-primary/5 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</button>
+<button class="p-2 hover:bg-primary/5 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-margin-desktop px-gutter-desktop max-w-container-max mx-auto">
+<header class="mb-margin-desktop">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-primary mb-4">Review Your Cart</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Quality curated, ready for your kitchen.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Cart Items List -->
+<section class="lg:col-span-7 space-y-8">
+<!-- Item 1: Tellicherry Pepper -->
+<div class="group flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="w-full md:w-40 h-40 bg-surface-variant rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-resolution close-up of dark, wrinkled Tellicherry peppercorns in a minimalist ceramic bowl. The lighting is soft and directional, highlighting the organic textures and deep black tones of the spice. The scene is shot in a bright, modern kitchen setting with clean white backgrounds, reflecting a premium and sophisticated culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPu0vu_Mwtsqts_ItIHih9mP8oEDEP1g8Alpc5bvgME7jNs8iBdn1h7I8aeqiTtKaYCbaJQNfUwPLdrC77Za66EXctfPEXtKIVccgRqB2NV-OsA_cyqyB1JWP0GW67PNm5fVrGdz8tkxj70EkG4QTYqKOuU95L2GpoIzsmnTdzEppoUraroL8Com5YQOISaCBczLBIJvpGhQ7JAGIScPs7NsMJkO5BF1mCao8MxFPqFKDUhRBlVTRLCQoxoUXL4nbaJt5uvpv-iEw"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-[10px] uppercase tracking-widest text-secondary mb-1 block">Whole Spice</span>
+<h3 class="font-headline-lg text-title-md text-primary">Tellicherry Pepper</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Sun-ripened, hand-picked in Kerala.</p>
+</div>
+<span class="font-headline-lg text-title-md text-primary">$18.00</span>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex items-center border border-outline-variant rounded-full px-2 py-1">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="w-10 text-center font-label-sm text-body-md">1</span>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+<button class="font-label-sm text-label-sm uppercase tracking-wider text-error hover:underline transition-all">Remove</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Signature Mixed Masala -->
+<div class="group flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="w-full md:w-40 h-40 bg-surface-variant rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant pile of signature mixed masala spice blend, showing rich ochre, deep crimson, and earthy brown tones. The powder is finely ground and presented on a matte black slate surface, illuminated by crisp, professional studio lighting that emphasizes color purity. The mood is warm and artisanal, maintaining a high-end gourmet branding style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7yiQW0odcDpJAHZim-0xR4azMQz48d-JgB3rcEcGix9Vdc4SOd1T3kRBpAfkc72n35G9ibrARM5Tnf0-2CxrwBC4egalkNbakHoeY56W_XTHbwSVpOdrRCcqRg_hAE_yiTx2zlTGRv6VmmKnm2x3ea7hTclwZTVa-lfujvuLjksyVHy9i3e0ucXUYDK50uDJVabY5jIBr4lJDFpyBCu4i6Hn7bVokeONmmYKynmxe6gq4Py9SePlz0rcjB3Q1czJz52SD2lDxSbU"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-[10px] uppercase tracking-widest text-secondary mb-1 block">Bespoke Blend</span>
+<h3 class="font-headline-lg text-title-md text-primary">Mixed Masala</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">12-spice artisanal blend, stone-ground.</p>
+</div>
+<span class="font-headline-lg text-title-md text-primary">$24.00</span>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex items-center border border-outline-variant rounded-full px-2 py-1">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="w-10 text-center font-label-sm text-body-md">2</span>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+<button class="font-label-sm text-label-sm uppercase tracking-wider text-error hover:underline transition-all">Remove</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Summary Sidebar -->
+<aside class="lg:col-span-5">
+<div class="glass-card sticky top-32 p-8 rounded-2xl border border-primary/5 shadow-2xl shadow-primary/5 overflow-hidden">
+<!-- Glass Background Accents -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-48 h-48 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between font-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>$66.00</span>
+</div>
+<div class="flex justify-between font-body-md text-on-surface-variant">
+<span>Estimated Shipping</span>
+<span>$8.50</span>
+</div>
+<div class="flex justify-between font-body-md text-on-surface-variant">
+<span>Tax (8%)</span>
+<span>$5.28</span>
+</div>
+<div class="pt-4 border-t border-outline-variant flex justify-between">
+<span class="font-headline-lg text-title-md text-primary">Total</span>
+<span class="font-headline-lg text-headline-lg text-primary">$79.78</span>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="mb-8">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-2 block">Promo Code</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-low border-b border-outline-variant focus:border-primary focus:ring-0 px-0 transition-colors font-body-md py-2" placeholder="Enter code" type="text"/>
+<button class="font-label-sm text-label-sm text-primary uppercase tracking-wider hover:opacity-70 transition-opacity">Apply</button>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-label-sm text-label-sm uppercase tracking-[0.2em] hover:bg-primary-container transition-all duration-300 active:scale-[0.98] shadow-lg shadow-primary/20">
+                            Proceed to Payment
+                        </button>
+<div class="mt-8 flex flex-col items-center gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant/60">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Encrypted Checkout</span>
+</div>
+<div class="flex gap-4 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+<span class="material-symbols-outlined text-[32px]">credit_card</span>
+<span class="material-symbols-outlined text-[32px]">account_balance_wallet</span>
+<span class="material-symbols-outlined text-[32px]">contactless</span>
+</div>
+</div>
+</div>
+</div>
+</aside></div>
+<!-- Recommendations -->
+<section class="mt-margin-desktop pt-margin-desktop border-t border-outline-variant">
+<h2 class="font-display-lg text-headline-lg text-primary mb-12">Pairs perfectly with</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter-desktop">
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist presentation of premium Himalayan Pink Salt crystals on a light gray marble surface. Soft, high-key lighting creates a clean, ethereal mood with subtle shadows. The aesthetic is extremely modern and airy, aligning with a high-end grocery brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4ezBCJ8n9M6dV5NcTlkq805RtmGcQgmneA8b9Jb9kCT0oGdmaolL_xOoGHGrSPhxCqATezY2YQBOye1MPEF_93aIqM-y7CRzAj8W016UIJwDD4UVoz87Zt34HDf2YOgedn0VzrTjba3u7WEy6CqO-nIp_dF7-rkoRcbgX6rUjuv-Fa4ii4WrJbsLDvGMPvq5d-sABgHkSX-jjoSyYSvuDQiTwCsm7KoryylMpnG3FcnL4rzt6MZ2YPomLLve7AJgIs7tReTUaVA8"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
+</div>
+<h4 class="font-headline-lg text-title-md text-primary">Pink Salt</h4>
+<span class="font-label-sm text-secondary">$12.00</span>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Three delicate saffron threads resting on a hand-crafted white ceramic spoon. The background is a soft, out-of-focus deep green forest tone, emphasizing the vibrant red and gold of the spice. The lighting is natural and atmospheric, suggesting luxury and absolute purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIj7YJhi1WHTyGW4id6CSnZpyy4Z3zHWbuR6nt6i17U-34dvHfqnbqZRbOSH7wyjOddEXfnnnJ2ejRxDEauhY4TRsQZX3WrywkzZCdCl8SBeZ9bBpJn9c2-iPi98ZblaC0mtJjOFBRKODlU5VjP2V818RIMY0U4LEGmvW2YDkIYGUvBagzkhwylH_lWJLeAHGxOPEARfu2sj-_nNakNw4iMh23g87L9AAUCcHeZOhlIRSbDZsJlwk_Z60FUhmlzQxA0jRpY-dbrB4"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
+</div>
+<h4 class="font-headline-lg text-title-md text-primary">Kashmiri Saffron</h4>
+<span class="font-label-sm text-secondary">$45.00</span>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Organic green cardamom pods arranged neatly on a textured beige linen background. The composition is minimalist and symmetrical, with soft overhead lighting that emphasizes the delicate ridges of the pods. The overall color palette is earthy and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCalfgzIqSas5TSYWXxYeEx6q4A5N-q4t7Dxs0J2YKXJ2K_w9NIwIY7siPZiTX8QVW3XMrzpTeKQgAKEBcqpWA-kBIAd1YlmfkSFLdiefEoEbkQ7cjADg-q6JfigRoXQIbjkEHBfSof5ZZ87-U1XBCqhkloP7QH87AZP-TrdE03YM6oSYv3kI9HG7RwgWR60BDRwZp_tNUO9IxRv-_OFVVcWey9FA3QcgvdqX9cEylKGCISqHX8wpQUVjbzJv9Rb5J-xnMT-8ZODmY"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
+</div>
+<h4 class="font-headline-lg text-title-md text-primary">Green Cardamom</h4>
+<span class="font-label-sm text-secondary">$16.00</span>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A single, perfectly cured vanilla bean pod glistening with natural oils, placed on a crisp white backdrop. Macro photography highlights the intricate details of the pod's texture. The lighting is bright and clean, evoking a sense of premium culinary excellence and high-end curation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzrU_KzbggkYyDw5MLsH6XmcHnPilslEXZyCPVJU5Rilt_Nb_JTgY0lndhjbkDdG28x8r5GSkUE0idIimk3il7ri_RNVVKW-R9FQlB8brehYaz1m0DtOFeN8DLj8rh5m9NswB1zM83tCmC8fUTU0KaIdEazf8aYgzgSRTI46l7TsDvIfXwrJ9Umm7lhLEWLlsSPeffI9_6F-NtqGdx1EfLqSRVcpbSTte9AIzWQDcxjuezNBk0DwXUGcdXGLgCq7Q4Nr6vYIlyLuQ"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
+</div>
+<h4 class="font-headline-lg text-title-md text-primary">Madagascar Vanilla</h4>
+<span class="font-label-sm text-secondary">$32.00</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-margin-desktop border-t border-outline-variant bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop px-gutter-desktop py-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-lg font-bold text-primary mb-6">EPICUREAN</div>
+<p class="font-body-md text-on-surface-variant max-w-xs">Elevating the global pantry through meticulous sourcing and radical transparency.</p>
+</div>
+<div>
+<h5 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Company</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Sourcing</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Sustainability</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Wholesale</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Support</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Shipping</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Returns</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Manifesto</h5>
+<p class="font-body-md text-on-surface-variant italic">"Flavor is the ultimate luxury, harvested by hand and delivered with care."</p>
+<div class="flex gap-4 mt-6">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-60 transition-opacity">alternate_email</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-60 transition-opacity">public</span>
+</div>
+</div>
+</div>
+<div class="px-gutter-desktop py-8 border-t border-outline-variant/30 max-w-container-max mx-auto text-center md:text-left">
+<span class="font-body-md text-on-surface-variant text-sm">© 2024 Epicurean Spices &amp; Groceries. All rights reserved.</span>
+</div>
+</footer>
+<script>
+        // Micro-interactions for quantity buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if(this.querySelector('.material-symbols-outlined')) {
+                    const span = this.closest('.flex.items-center.border').querySelector('span.w-10');
+                    if(span) {
+                        let val = parseInt(span.innerText);
+                        if(this.innerText.includes('add')) val++;
+                        if(this.innerText.includes('remove') && val > 1) val--;
+                        span.innerText = val;
+                    }
+                }
+            });
+        });
+
+        // Simple parallax effect for glass cards on mouse move
+        const glassCard = document.querySelector('.glass-card');
+        if (glassCard) {
+            window.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) / 100;
+                const moveY = (e.clientY - window.innerHeight / 2) / 100;
+                glassCard.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        }
+    </script>
+</body></html>

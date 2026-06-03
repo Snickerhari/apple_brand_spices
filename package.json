@@ -1,0 +1,26 @@
+{
+  "name": "apple-brand-premium-groceries",
+  "version": "1.0.0",
+  "description": "Premium Spices & Groceries eCommerce platform styled on Apple-inspired luxury UI.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^6.0.1"
+  },
+  "keywords": [
+    "ecommerce",
+    "spices",
+    "groceries",
+    "apple-style",
+    "tamil",
+    "express",
+    "node"
+  ],
+  "author": "Antigravity Pair Programmer",
+  "license": "ISC"
+}

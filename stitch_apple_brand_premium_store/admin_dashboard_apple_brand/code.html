@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EPICUREAN | Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=Ibm+Plex+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-panel {
+            background: rgba(252, 248, 251, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .soft-shadow {
+            box-shadow: 0 40px 40px -20px rgba(0, 24, 9, 0.04);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #727972;
+            border-radius: 10px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"inverse-primary": "#accfb3", "on-primary-fixed-variant": "#2f4d38", "on-tertiary-container": "#8c908f", "on-tertiary-fixed": "#181c1b", "surface-container-highest": "#e4e2e4", primary: "#001809", "surface-bright": "#fcf8fb", "secondary-fixed-dim": "#e9c176", "inverse-surface": "#303032", "surface-tint": "#46654f", "on-error-container": "#93000a", "tertiary-container": "#252928", "tertiary-fixed-dim": "#c4c7c5", "on-background": "#1b1b1d", outline: "#727972", "primary-fixed-dim": "#accfb3", "on-tertiary": "#ffffff", "surface-container": "#f0edef", "secondary-fixed": "#ffdea5", "on-primary-container": "#76977e", "error-container": "#ffdad6", "primary-fixed": "#c8ebce", "surface-container-low": "#f6f3f5", "secondary-container": "#fed488", "surface-dim": "#dcd9dc", "on-secondary-container": "#785a1a", "surface-container-high": "#eae7ea", "primary-container": "#0f2e1b", "on-primary": "#ffffff", "tertiary-fixed": "#e0e3e1", error: "#ba1a1a", "on-surface-variant": "#424842", "inverse-on-surface": "#f3f0f2", tertiary: "#111514", "on-secondary-fixed-variant": "#5d4201", "outline-variant": "#c2c8c0", "on-secondary-fixed": "#261900", "on-surface": "#1b1b1d", surface: "#fcf8fb", background: "#fcf8fb", "surface-container-lowest": "#ffffff", secondary: "#775a19", "on-tertiary-fixed-variant": "#434846", "on-error": "#ffffff", "surface-variant": "#e4e2e4", "on-primary-fixed": "#02210f", "on-secondary": "#ffffff"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}, spacing: {"gutter-desktop": "24px", "container-max": "1440px", base: "8px", "margin-desktop": "64px", "gutter-mobile": "16px", "margin-mobile": "20px"}, fontFamily: {"display-lg": ["Climate Crisis"], "body-lg": ["Inter"], "headline-lg": ["Climate Crisis"], "label-sm": ["IBM Plex Sans"], "body-md": ["Inter"], "title-md": ["Climate Crisis"], "headline-lg-mobile": ["Climate Crisis"], headline: ["Bodoni Moda"], display: ["Bodoni Moda"], body: ["Inter"], label: ["Ibm Plex Sans"]}, fontSize: {"display-lg": ["56px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", fontWeight: "400"}], "headline-lg": ["32px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "title-md": ["20px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["28px", {lineHeight: "1.2", fontWeight: "400"}]}}}};</script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden">
+<!-- Shell Layout -->
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 bg-surface-container-lowest border-r border-outline-variant/30 flex flex-col z-30">
+<div class="h-20 flex items-center px-gutter-desktop">
+<span class="font-display-lg text-title-md font-bold tracking-tighter text-primary">EPICUREAN</span>
+</div>
+<nav class="flex-1 px-4 py-base space-y-1 custom-scrollbar overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-on-primary-container transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Analytics</span>
+</a>
+<div class="pt-margin-desktop border-t border-outline-variant/30 mt-8">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Settings</span>
+</a>
+</div>
+</nav>
+<div class="p-gutter-desktop border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white overflow-hidden">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate executive in a bright, modern office setting. The lighting is soft and flattering, highlighting a clean-shaven man with a friendly yet authoritative expression. The background is a minimalist, out-of-focus tech office with glass partitions and soft green plants. The overall aesthetic is high-end, clean, and corporate, aligning with the premium minimalist brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXhDpbac5fAU0ml7QBORqnEid56BarZTlqtukLzriWh5xBj0f7gWh2jhdsMF3VTfcJv-nG-yYqGjmA7tnRmiKnuQTiJhqI8Y7N_kAoCsDQvdSBo2LB9D16T1Uu_Z8fQk1PRizJbnUvHlUsgJmaxFuebsyfrBLaUKGQoQn8W7Ioo6hzSeJcGq6hbpctyu94pelTQDRGxu4BRb7oLSb98FNbR5LvwUTM-70zmaqKBM9h4CDd5bHPkUwDPScpqwFomKGJECXEeNhYF1o"/>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary">Julian Thorne</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">System Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 bg-surface-container-low overflow-hidden">
+<!-- Top Bar -->
+<header class="h-20 glass-panel border-b border-primary/5 px-gutter-desktop flex items-center justify-between sticky top-0 z-20">
+<div class="flex items-center gap-gutter-desktop">
+<h1 class="font-headline-lg text-headline-lg text-primary">Overview</h1>
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50">search</span>
+<input class="bg-surface-container border-none rounded-full pl-10 pr-6 py-2 text-sm w-64 focus:ring-1 focus:ring-primary/20 transition-all" placeholder="Search data points..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-sm text-label-sm tracking-wide uppercase hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add New Product
+                    </button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-gutter-desktop space-y-gutter-desktop custom-scrollbar">
+<!-- Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+<!-- Metric Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow border border-outline-variant/10 group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-xs font-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 12.5%
+                            </span>
+</div>
+<p class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-1">Total Sales</p>
+<h3 class="font-display-lg text-headline-lg text-primary">$142,850.00</h3>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow border border-outline-variant/10 group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<span class="text-xs font-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 8.2%
+                            </span>
+</div>
+<p class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-1">New Orders</p>
+<h3 class="font-display-lg text-headline-lg text-primary">1,240</h3>
+</div>
+<!-- Metric Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow border border-outline-variant/10 group hover:border-error/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-on-error-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<span class="text-xs font-label-sm text-error uppercase tracking-tighter">Action Required</span>
+</div>
+<p class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-1">Stock Alerts</p>
+<h3 class="font-display-lg text-headline-lg text-primary">14</h3>
+</div>
+<!-- Metric Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl soft-shadow border border-outline-variant/10 group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="text-xs font-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 24%
+                            </span>
+</div>
+<p class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-1">New Customers</p>
+<h3 class="font-display-lg text-headline-lg text-primary">892</h3>
+</div>
+</div>
+<!-- Bento Grid for Visualization -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-desktop">
+<!-- Sales Chart Area -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-gutter-desktop rounded-xl soft-shadow border border-outline-variant/10 relative overflow-hidden h-[400px]">
+<div class="flex justify-between items-center mb-8 relative z-10">
+<div>
+<h4 class="font-title-md text-title-md text-primary">Revenue Velocity</h4>
+<p class="text-sm text-on-surface-variant">Real-time tracking of gourmet sales cycles</p>
+</div>
+<select class="bg-surface-container border-none rounded-lg text-xs font-label-sm py-1.5 pl-3 pr-8 focus:ring-0">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<!-- Simplified Visualization (CSS Only) -->
+<div class="absolute bottom-0 left-0 right-0 h-48 flex items-end px-gutter-desktop gap-3 pb-8">
+<div class="flex-1 bg-primary/5 rounded-t-lg transition-all hover:bg-primary/20" style="height: 60%;"></div>
+<div class="flex-1 bg-primary/5 rounded-t-lg transition-all hover:bg-primary/20" style="height: 80%;"></div>
+<div class="flex-1 bg-primary/5 rounded-t-lg transition-all hover:bg-primary/20" style="height: 45%;"></div>
+<div class="flex-1 bg-primary/5 rounded-t-lg transition-all hover:bg-primary/20" style="height: 90%;"></div>
+<div class="flex-1 bg-primary rounded-t-lg transition-all hover:bg-primary/90" style="height: 100%;"></div>
+<div class="flex-1 bg-primary/5 rounded-t-lg transition-all hover:bg-primary/20" style="height: 75%;"></div>
+<div class="flex-1 bg-primary/5 rounded-t-lg transition-all hover:bg-primary/20" style="height: 65%;"></div>
+</div>
+</div>
+<!-- Category Distribution -->
+<div class="bg-surface-container-lowest p-gutter-desktop rounded-xl soft-shadow border border-outline-variant/10 flex flex-col">
+<h4 class="font-title-md text-title-md text-primary mb-6">Inventory Mix</h4>
+<div class="space-y-6 flex-1 flex flex-col justify-center">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label-sm uppercase tracking-wider">
+<span>Premium Spices</span>
+<span>42%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 42%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label-sm uppercase tracking-wider">
+<span>Artisanal Grains</span>
+<span>28%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 28%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label-sm uppercase tracking-wider">
+<span>Infused Oils</span>
+<span>15%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-primary-container rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label-sm uppercase tracking-wider">
+<span>Gifts &amp; Sets</span>
+<span>15%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Orders Table Section -->
+<section class="bg-surface-container-lowest rounded-xl soft-shadow border border-outline-variant/10 overflow-hidden">
+<div class="px-gutter-desktop py-6 flex justify-between items-center border-b border-outline-variant/30">
+<h4 class="font-title-md text-title-md text-primary">Recent Orders</h4>
+<button class="text-primary font-label-sm text-label-sm uppercase tracking-widest hover:underline">View All Report</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-gutter-desktop py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Order ID</th>
+<th class="px-gutter-desktop py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Customer</th>
+<th class="px-gutter-desktop py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Products</th>
+<th class="px-gutter-desktop py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Status</th>
+<th class="px-gutter-desktop py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Amount</th>
+<th class="px-gutter-desktop py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="hover:bg-primary/5 transition-colors cursor-pointer">
+<td class="px-gutter-desktop py-4 text-sm font-label-sm">#EP-4902</td>
+<td class="px-gutter-desktop py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-[10px] font-bold">EK</div>
+<span class="text-sm font-medium">Eleanor Kade</span>
+</div>
+</td>
+<td class="px-gutter-desktop py-4 text-sm text-on-surface-variant">Saffron, Smoked Paprika</td>
+<td class="px-gutter-desktop py-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold uppercase rounded-full tracking-wider">Processing</span>
+</td>
+<td class="px-gutter-desktop py-4 text-sm font-medium">$124.50</td>
+<td class="px-gutter-desktop py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">more_horiz</button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors cursor-pointer">
+<td class="px-gutter-desktop py-4 text-sm font-label-sm">#EP-4901</td>
+<td class="px-gutter-desktop py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-[10px] font-bold">MR</div>
+<span class="text-sm font-medium">Marcus Reid</span>
+</div>
+</td>
+<td class="px-gutter-desktop py-4 text-sm text-on-surface-variant">Truffle Oil, Himalayan Salt</td>
+<td class="px-gutter-desktop py-4">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold uppercase rounded-full tracking-wider">Delivered</span>
+</td>
+<td class="px-gutter-desktop py-4 text-sm font-medium">$89.00</td>
+<td class="px-gutter-desktop py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">more_horiz</button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors cursor-pointer">
+<td class="px-gutter-desktop py-4 text-sm font-label-sm">#EP-4900</td>
+<td class="px-gutter-desktop py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-[10px] font-bold">SL</div>
+<span class="text-sm font-medium">Sarah Lind</span>
+</div>
+</td>
+<td class="px-gutter-desktop py-4 text-sm text-on-surface-variant">Vanilla Bean, Star Anise</td>
+<td class="px-gutter-desktop py-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold uppercase rounded-full tracking-wider">Processing</span>
+</td>
+<td class="px-gutter-desktop py-4 text-sm font-medium">$45.10</td>
+<td class="px-gutter-desktop py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">more_horiz</button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors cursor-pointer">
+<td class="px-gutter-desktop py-4 text-sm font-label-sm">#EP-4899</td>
+<td class="px-gutter-desktop py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-[10px] font-bold text-white">JH</div>
+<span class="text-sm font-medium">James Holt</span>
+</div>
+</td>
+<td class="px-gutter-desktop py-4 text-sm text-on-surface-variant">Cardamom, Cumin</td>
+<td class="px-gutter-desktop py-4">
+<span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold uppercase rounded-full tracking-wider">Cancelled</span>
+</td>
+<td class="px-gutter-desktop py-4 text-sm font-medium">$32.00</td>
+<td class="px-gutter-desktop py-4 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">more_horiz</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="h-20"></div> <!-- Bottom Spacer -->
+</div>
+</main>
+</div>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simple hover animation for cards
+            const cards = document.querySelectorAll('.soft-shadow');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-4px)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Navigation Active State Toggle
+            const navItems = document.querySelectorAll('aside nav a');
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    navItems.forEach(i => {
+                        i.classList.remove('bg-primary-container', 'text-on-primary-container');
+                        i.classList.add('text-on-surface-variant', 'hover:bg-surface-container');
+                        const icon = i.querySelector('.material-symbols-outlined');
+                        if(icon) icon.style.fontVariationSettings = "'FILL' 0";
+                    });
+                    item.classList.add('bg-primary-container', 'text-on-primary-container');
+                    item.classList.remove('text-on-surface-variant', 'hover:bg-surface-container');
+                    const icon = item.querySelector('.material-symbols-outlined');
+                    if(icon) icon.style.fontVariationSettings = "'FILL' 1";
+                });
+            });
+        });
+    </script>
+</body></html>
