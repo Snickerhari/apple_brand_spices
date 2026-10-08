@@ -1588,3 +1588,26 @@ window.addEventListener('DOMContentLoaded', async () => {
     await initLocalStorage();
     Router.init();
 });
+
+// Hero image parallax
+window.addEventListener('scroll', () => {
+    const parallax = document.getElementById('hero-parallax');
+    if (parallax && typeof State !== 'undefined' && State.currentView === 'home') {
+        let offset = window.pageYOffset;
+        parallax.style.transform = `translateY(${offset * 0.3}px)`;
+    }
+});
+
+// Sticky Header shrink
+window.addEventListener('scroll', () => {
+    const header = document.getElementById('customer-header');
+    if (header) {
+        if (window.scrollY > 40) {
+            header.classList.add('shadow-md', 'h-16');
+            header.classList.remove('h-20');
+        } else {
+            header.classList.remove('shadow-md', 'h-16');
+            header.classList.add('h-20');
+        }
+    }
+});
